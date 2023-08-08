@@ -10,12 +10,17 @@ from src.config import MODEL, TEMPERATURE
 
 def get_chat_response(prompt: str, model=MODEL, temperature=TEMPERATURE) -> (str, str, float):
     print("Initiated chat with OpenAI API.")
-    completion = openai.ChatCompletion.create(model=model,
-                                              temperature=temperature,
-                                              messages=[
-                                                  {"role": "user", "content": prompt}])
-    print("Completed chat with OpenAI API.")
-    return completion.choices[0].message.content, model, temperature
+    try:
+        completion = openai.ChatCompletion.create(model=model,
+                                                  temperature=temperature,
+                                                  messages=[
+                                                      {"role": "user", "content": prompt}])
+        print("Completed chat with OpenAI API.")
+        return completion.choices[0].message.content, model, temperature
+    except Exception as e:
+        print(f"Error: {e}")
+        print("Retrying....")
+        return get_chat_response(prompt, model, temperature)
 
 
 def evaluate(criterion: Criterion, story: Story):
