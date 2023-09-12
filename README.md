@@ -1,6 +1,6 @@
 # The Chronicles of ChatGPT: Generating and Evaluating Visual Novel Narratives on Climate Change through ChatGPT
 
-This repository contains the code for the paper "The Chronicles of ChatGPT: Generating and Evaluating Visual Novel Narratives on Climate Change through ChatGPT".
+This repository contains the code for the paper "The Chronicles of ChatGPT: Generating and Evaluating Visual Novel Narratives on Climate Change through ChatGPT" accepted at [ICIDS 2023](http://icids2023.ardin.online).
 
 ## Abstract
 
